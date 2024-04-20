@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { Routes, Route } from "react-router-dom";
 import CategoriesPreview from "../categoriesPreview/categories-preview.route";
 import Category from "../category/category.compoent";

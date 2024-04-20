@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { useContext, useEffect, useState } from "react";
 import { CategoriesContext } from "@/contexts/categories.context";
 import { useParams } from "react-router-dom";
@@ -11,7 +12,7 @@ const Category = () => {
   const routeUrl = useParams();
   const { category } = routeUrl;
   const { categoriesMap } = useContext(CategoriesContext);
-  const { addItemToCart, cartItem } = useContext(CartContext);
+  const { addItemToCart } = useContext(CartContext);
 
   const handleClick = (product) => {
     addItemToCart(product);

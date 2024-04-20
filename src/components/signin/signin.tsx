@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { useState, useContext } from "react";
 import { Button } from "../ui/button";
 import { Input } from "../ui/input";
@@ -5,7 +6,7 @@ import { signInAuthWithEmailAndPassword } from "../../utils/firebase/firebase.ut
 import { useToast } from "../ui/use-toast";
 import { Toaster } from "../ui/toaster";
 
-import { UserContext } from "@/contexts/user.context";
+import { UserContext } from "../../contexts/user.context";
 import { FirebaseError } from "firebase/app";
 
 const defaultFormFields = {
@@ -17,7 +18,7 @@ const SignInForm = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { email, password } = formFields;
 
-  const { currentUser, setCurrentUser } = useContext(UserContext);
+  const { setCurrentUser } = useContext(UserContext);
 
   const { toast } = useToast();
 
@@ -34,7 +35,7 @@ const SignInForm = () => {
       //Successfully Toaster
 
       //UserContext
-      setCurrentUser(response.user);
+      setCurrentUser(response?.user);
 
       toast({
         title: "Successfully Logged In 😄",

@@ -5,9 +5,16 @@ import { CartContext } from "@/contexts/cart.context";
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 
+interface Products {
+  name: string;
+  id: number;
+  price: number;
+  imageUrl: string;
+}
+
 interface Props {
   title: string;
-  product: [];
+  products: Products[];
 }
 
 const CategoryPreview = ({ title, products }: Props) => {
@@ -18,7 +25,7 @@ const CategoryPreview = ({ title, products }: Props) => {
     navigate(`/shop/${title}`);
   };
 
-  const handleClick = (product) => {
+  const handleClick = (product: Products) => {
     addItemToCart(product);
     toast({
       title: `${product.name}, Add to Cart Succesfully`,
@@ -40,7 +47,9 @@ const CategoryPreview = ({ title, products }: Props) => {
               className="w-[300px] h-[350px] rounded-lg"
             />
             <div className="flex justify-between mt-5 ">
-              <h1 className="text-xl mt-2">{product.name}</h1>
+              <h1 className="text-xlproduct?: Productsproduct: Products mt-2">
+                {product.name}
+              </h1>
               <Button onClick={() => handleClick(product)}>Add To Cart</Button>
             </div>
           </Card>

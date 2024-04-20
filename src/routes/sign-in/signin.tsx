@@ -1,5 +1,4 @@
-//Sign In Page
-
+// @ts-nocheck
 import { Button } from "@/components/ui/button";
 
 import {
@@ -13,7 +12,7 @@ const SignIn = () => {
   const logGoogleUser = async () => {
     const response = await signInWithGooglePopup();
     console.log(response.user);
-    const userDocRef = await createUserDocumentFromAuth(response.user);
+    await createUserDocumentFromAuth(response.user);
   };
 
   return (

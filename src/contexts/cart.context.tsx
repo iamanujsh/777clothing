@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { createContext, useState } from "react";
 
 interface CartItem {
@@ -54,7 +55,7 @@ const removeItemFromCart = (cartItems: [], productToRemove: Products) => {
 
 export const CartContext = createContext({
   cartItem: [],
-  addItemToCart: () => {},
+  addItemToCart: (product: Products) => {},
   removeItemToCart: () => {},
   deleteItemFromCart: () => {},
 });

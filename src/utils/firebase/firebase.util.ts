@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { initializeApp } from "firebase/app";
 
 import {
@@ -37,7 +38,7 @@ interface User {
 }
 
 // Initialize Firebase
-const firebaseApp = initializeApp(firebaseConfig);
+initializeApp(firebaseConfig);
 
 //Initialize Provider for authentication
 

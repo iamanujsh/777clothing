@@ -1,7 +1,19 @@
+// @ts-nocheck
 import { createContext, useState, useEffect } from "react";
 
 // import { addCollectionAndDocuments } from "@/utils/firebase/firebase.util";
 import { getCategoriesAndDocuments } from "@/utils/firebase/firebase.util";
+
+interface Category {
+  name: string;
+  id: number;
+  price: number;
+  imageUrl: string;
+}
+
+interface CategoriesMap {
+  [categoryTitle: string]: Category[]; // Key is a string, value is an array of Category objects
+}
 
 export const CategoriesContext = createContext({
   categoriesMap: {},

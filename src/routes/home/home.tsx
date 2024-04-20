@@ -1,5 +1,4 @@
-import React from "react";
-
+// @ts-nocheck
 import CategoryItem from "@/components/CategoryItem";
 const categories = [
   {

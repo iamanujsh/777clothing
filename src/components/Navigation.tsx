@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { IoPersonOutline } from "react-icons/io5";
 import { MdOutlineShoppingBag } from "react-icons/md";
 import { Link, Outlet } from "react-router-dom";

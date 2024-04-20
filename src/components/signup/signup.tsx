@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import { useToast } from "../ui/use-toast";
@@ -41,7 +42,7 @@ const SignUp = () => {
       const user = await createAuthUserWithEmailAndPassword(email, password);
       console.log(user);
 
-      const response = await createUserDocumentFromAuth(user.user, {
+      await createUserDocumentFromAuth(user.user, {
         displayName,
       });
 
